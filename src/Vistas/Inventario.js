@@ -1,5 +1,9 @@
 import React from 'react';
 import '../inventario.css';
+// Importar las imágenes en este componente también
+import htmlImage from '../html.jpg';
+import cssImage from '../css.jpg';
+
 function Inventario() {
   return (
     <div className="inventario">
@@ -37,6 +41,24 @@ function Inventario() {
         </select>
         <button type="submit">Eliminar</button>
       </form>
+      
+      <div className="footer-section">
+        <h3>Validaciones</h3>
+        <div className="tech-images">
+          {/* IMAGEN 1 en el footer - HTML */}
+          <img 
+            src={htmlImage} 
+            alt="HTML5 - Lenguaje de marcado web" 
+            className="tech-image"
+          />
+          {/* IMAGEN 2 en el footer - CSS */}
+          <img 
+            src={cssImage} 
+            alt="CSS3 - Hojas de estilo en cascada" 
+            className="tech-image"
+          />
+        </div>
+      </div>
     </div>
   );
 }

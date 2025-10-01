@@ -203,6 +203,22 @@ body {
   margin-bottom: 0.5rem;
   color: #cbd5e1;
 }
+/* Estilos para las imágenes del footer - SOLO ESTO SE AGREGÓ */
+.tech-images {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.tech-image {
+  width: 60px;  /* Imágenes más pequeñas */
+  height: 60px; /* Imágenes más pequeñas */
+  object-fit: contain; /* ← CAMBIA cover por contain */
+  border-radius: 8px;
+  border: 2px solid #93c5fd;
+  background: white; /* ← Fondo blanco para que se vea mejor */
+}
 
 .footer-bottom {
   text-align: center;
@@ -220,5 +236,10 @@ body {
   
   .categories {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-image {
+    width: 50px;  /* Más pequeñas en móviles */
+    height: 50px; /* Más pequeñas en móviles */
   }
 }
