@@ -1,0 +1,136 @@
+/* Inventario principal */
+.inventario {
+  padding: 2rem;
+  background: #1e40af;
+  min-height: 100vh;
+}
+
+.inventario h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Contenedor de formularios */
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Formularios individuales */
+.formulario-alta,
+.formulario-modificacion,
+.formulario-eliminacion {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.formulario-alta {
+  border-left: 4px solid #10b981; /* ⭐ Borde color verde */
+}
+
+.formulario-modificacion {
+  border-left: 4px solid #3b82f6; /* ⭐ Borde color azul */
+}
+
+.formulario-eliminacion {
+  border-left: 4px solid #ef4444; /* ⭐ Borde color rojo */
+}
+
+/* Títulos de formularios */
+.formulario-alta h2,
+.formulario-modificacion h2,
+.formulario-eliminacion h2 {
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Campos de formulario */
+.formulario-alta input,
+.formulario-modificacion input,
+.formulario-eliminacion input,
+.formulario-alta select,
+.formulario-modificacion select,
+.formulario-eliminacion select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.formulario-alta input:focus,
+.formulario-modificacion input:focus,
+.formulario-eliminacion input:focus,
+.formulario-alta select:focus,
+.formulario-modificacion select:focus,
+.formulario-eliminacion select:focus {
+  outline: none;
+  border-color: #3b82f6; /* ⭐ Cambia color al enfocar */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* ⭐ Placeholder personalizado */
+.formulario-alta input::placeholder,
+.formulario-modificacion input::placeholder,
+.formulario-eliminacion input::placeholder {
+  color: #9ca3af;
+}
+
+/* Botones */
+.formulario-alta button,
+.formulario-modificacion button,
+.formulario-eliminacion button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+.formulario-alta button {
+  background: #10b981;
+}
+
+.formulario-modificacion button {
+  background: #3b82f6;
+}
+
+.formulario-eliminacion button {
+  background: #ef4444;
+}
+
+.formulario-alta button:hover {
+  background: #059669;
+}
+
+.formulario-modificacion button:hover {
+  background: #2563eb;
+}
+
+.formulario-eliminacion button:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .inventario {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,224 @@
+/* Configuración básica */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* ⭐ Incluye padding en el tamaño total */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+/* Header */
+.navbar {
+  background: #2563eb;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* ⭐ Espacia elementos a los lados */
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #dbeafe;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s; /* ⭐ Transición suave */
+}
+
+.navbar nav a:hover {
+  background: #1d4ed8; /* ⭐ Cambia color al pasar mouse */
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #1e3a8a;
+}
+
+/* Banner */
+.banner {
+  background: #3b82f6;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.banner h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.banner p {
+  margin-bottom: 1.5rem;
+}
+
+.banner button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.banner button:hover {
+  background: #dc2626;
+}
+
+/* Categorías */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ⭐ Grid automático */
+  gap: 1rem;
+  padding: 2rem;
+  background: white;
+}
+
+.category-card {
+  background: #dbeafe;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* ⭐ Efecto de levantar */
+  background: #bfdbfe;
+}
+
+/* Productos */
+.productos-destacados {
+  padding: 2rem;
+  background: #f8fafc;
+}
+
+.productos-destacados h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* ⭐ Sombra al hover */
+}
+
+.product-image {
+  background: #e0f2fe;
+  height: 150px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0369a1;
+}
+
+.product-card h4 {
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.product-card p {
+  color: #dc2626;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-card button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer */
+.footer {
+  background: #1e3a8a;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  color: #93c5fd;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #374151;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
