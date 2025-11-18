@@ -10,7 +10,7 @@ function App() {
 
   // Llamada al backend para obtener productos
   useEffect(() => {
-    fetch("http://localhost:3001/productos") // Cambia la IP si es otra PC
+    fetch("http://localhost:3000/productos") // Cambia la IP si es otra PC
       .then(res => res.json())
       .then(data => setProductos(data))
       .catch(err => console.log("Error al cargar productos:", err));

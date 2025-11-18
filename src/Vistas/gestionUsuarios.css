@@ -1,0 +1,382 @@
+.gestion-usuarios {
+  max-width: 100%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: white;
+  margin-top: 80px;
+}
+
+.gestion-usuarios h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #dbeafe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Mensajes de estado */
+.mensaje {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.mensaje-exito {
+  background: rgba(240, 253, 244, 0.95);
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.mensaje-error {
+  background: rgba(254, 242, 242, 0.95);
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* Header actions */
+.header-actions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-agregar {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.btn-agregar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+}
+
+/* Formulario usuario */
+.formulario-usuario {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.formulario-usuario::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.formulario-usuario h2 {
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+/* Campos de formulario */
+.campo-contenedor {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.formulario-usuario input,
+.formulario-usuario select {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(248, 250, 252, 0.9);
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.formulario-usuario input:focus,
+.formulario-usuario select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* Estilos para errores */
+.campo-error {
+  border-color: #ef4444 !important;
+  background: rgba(254, 242, 242, 0.9) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.error-texto {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  display: block;
+}
+
+/* Botones del formulario */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-guardar {
+  flex: 1;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-guardar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+.btn-cancelar {
+  flex: 1;
+  background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-cancelar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3);
+}
+
+/* Tabla de usuarios */
+.usuarios-lista {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.usuarios-lista h2 {
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.usuarios-table th,
+.usuarios-table td {
+  padding: 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.usuarios-table th {
+  background-color: #f8fafc;
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 1rem;
+}
+
+.usuarios-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Badge de roles */
+.badge-rol {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-rol.admin {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+}
+
+.badge-rol.cliente {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+}
+
+/* Botones de acciones */
+.btn-editar {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: black;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-editar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-eliminar {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Footer de validaciones */
+.footer-section {
+  text-align: left;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-section h3 {
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-images {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.tech-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid #3b82f6;
+  background: white;
+  padding: 8px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.tech-image:hover {
+  transform: translateY(-8px) scale(1.1);
+  border-color: #1e40af;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gestion-usuarios {
+    padding: 1rem;
+  }
+  
+  .gestion-usuarios h1 {
+    font-size: 2.2rem;
+  }
+  
+  .formulario-usuario,
+  .usuarios-lista {
+    padding: 2rem;
+  }
+  
+  .usuarios-table {
+    font-size: 0.875rem;
+  }
+  
+  .usuarios-table th,
+  .usuarios-table td {
+    padding: 0.8rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .gestion-usuarios h1 {
+    font-size: 1.8rem;
+  }
+  
+  .formulario-usuario,
+  .usuarios-lista {
+    padding: 1.5rem;
+  }
+  
+  .tech-images {
+    flex-direction: column;
+    align-items: center;
+  }
+}

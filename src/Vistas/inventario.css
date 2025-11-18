@@ -1,0 +1,537 @@
+
+.inventario {
+  max-width: 100%;
+
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: white;
+  margin-top: 80px;
+}
+
+.inventario h1 {
+  font-size: 2.2px;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #dbeafe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Mensajes de estado */
+.mensaje {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.mensaje-exito {
+  background: rgba(240, 253, 244, 0.95);
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.mensaje-error {
+  background: rgba(254, 242, 242, 0.95);
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* Grid de formularios */
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+/* Tarjetas de formulario AZUL PREMIUM */
+.formulario-alta,
+.formulario-modificacion,
+.formulario-eliminacion {
+ 
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.formulario-alta::before,
+.formulario-modificacion::before,
+.formulario-eliminacion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.formulario-alta:hover,
+.formulario-modificacion:hover,
+.formulario-eliminacion:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.25);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.formulario-alta h2,
+.formulario-modificacion h2,
+.formulario-eliminacion h2 {
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+/* Campos de formulario MEJORADOS */
+.campo-contenedor {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.formulario-alta input,
+.formulario-alta select,
+.formulario-modificacion input,
+.formulario-modificacion select,
+.formulario-eliminacion input,
+.formulario-eliminacion select {
+  width: 100%;
+  padding: 1.2rem;
+  background: rgba(248, 250, 252, 0.9);
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.formulario-alta input:focus,
+.formulario-alta select:focus,
+.formulario-modificacion input:focus,
+.formulario-modificacion select:focus,
+.formulario-eliminacion input:focus,
+.formulario-eliminacion select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.formulario-alta input::placeholder,
+.formulario-modificacion input::placeholder {
+  color: #94a3b8;
+}
+
+/* Estilos para errores MEJORADOS */
+.campo-error {
+  border-color: #ef4444 !important;
+  background: rgba(254, 242, 242, 0.9) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.error-texto {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  display: block;
+}
+
+/* Botones AZUL PREMIUM */
+.formulario-alta button,
+.formulario-modificacion button,
+.formulario-eliminacion button {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 1.3rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.formulario-alta button::before,
+.formulario-modificacion button::before,
+.formulario-eliminacion button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.formulario-alta button:hover,
+.formulario-modificacion button:hover,
+.formulario-eliminacion button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+.formulario-alta button:hover::before,
+.formulario-modificacion button:hover::before,
+.formulario-eliminacion button:hover::before {
+  left: 0;
+}
+
+/* Colores específicos para cada formulario */
+.formulario-alta {
+  border-left: 4px solid #10b981;
+}
+
+.formulario-modificacion {
+  border-left: 4px solid #3b82f6;
+}
+
+.formulario-eliminacion {
+  border-left: 4px solid #ef4444;
+}
+
+.formulario-alta button {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.formulario-modificacion button {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.formulario-eliminacion button {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+/* Footer de validaciones PREMIUM */
+.footer-section {
+  text-align: left;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-section h3 {
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tech-images {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+    gap:1.5rem
+}
+
+.tech-image {
+  
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid #3b82f6;
+  background: white;
+  padding: 8px;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.tech-image:hover {
+  transform: translateY(-8px) scale(1.1);
+  border-color: #1e40af;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+/* Responsive MEJORADO */
+@media (max-width: 768px) {
+  .inventario {
+    padding: 1rem;
+  }
+  
+  .inventario h1 {
+    font-size: 2.2rem;
+  }
+  
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .formulario-alta,
+  .formulario-modificacion,
+  .formulario-eliminacion {
+    padding: 2rem;
+  }
+  
+  .tech-images {
+    
+    gap: 1.5rem;
+  }
+  
+  .tech-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventario h1 {
+    font-size: 1.8rem;
+  }
+  
+  .formulario-alta,
+  .formulario-modificacion,
+  .formulario-eliminacion {
+    padding: 1.5rem;
+  }
+  
+  .tech-images {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animaciones PREMIUM */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formulario-alta,
+.formulario-modificacion,
+.formulario-eliminacion {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.formulario-modificacion {
+  animation-delay: 0.1s;
+}
+
+.formulario-eliminacion {
+  animation-delay: 0.2s;
+}
+
+/* Mejoras para selects */
+.formulario-alta select,
+.formulario-modificacion select,
+.formulario-eliminacion select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5em;
+  padding-right: 3rem;
+  appearance: none;
+}
+.busqueda-ajax {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.campo-busqueda {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.campo-busqueda:focus {
+  border-color: #007bff;
+  box-shadow: 0 2px 10px rgba(0,123,255,0.2);
+  transform: translateY(-2px);
+}
+
+.resultados-busqueda {
+  margin-top: 10px;
+  color: #666;
+  font-style: italic;
+}
+
+
+
+/* Estilos para la búsqueda AJAX */
+.busqueda-ajax {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.campo-busqueda {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.campo-busqueda:focus {
+  border-color: #007bff;
+  box-shadow: 0 2px 10px rgba(0,123,255,0.2);
+  transform: translateY(-2px);
+}
+
+.resultados-busqueda {
+  margin-top: 10px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Estilos para clientes */
+.productos-grid-cliente {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.producto-card-cliente {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.producto-card-cliente:hover {
+  transform: translateY(-5px);
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 150px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.producto-imagen img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.precio {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #28a745;
+  margin: 10px 0;
+}
+
+.categoria {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.btn-agregar-carrito {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-agregar-carrito:hover {
+  background: #0056b3;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background: #c82333;
+}
+
+.advertencia-auth {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+  color: #856404;
+}
+.cargando, .acceso-denegado {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.acceso-denegado {
+  background-color: #ffe6e6;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.acceso-denegado h2 {
+  color: #d63031;
+  margin-bottom: 15px;
+}
