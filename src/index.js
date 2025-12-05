@@ -120,6 +120,7 @@ function Index() {
       
       if (response.ok) {
         const data = await response.json();
+        console.log('Productos cargados:', data);
         setProductos(data);
         setProductosFiltrados(data);
       } else {
@@ -292,7 +293,7 @@ function Index() {
       'gestion-usuarios': <GestionUsuarios />,
       'login': <Login onLoginSuccess={handleLoginSuccess} />,
       'tienda': renderTienda(),
-      'carrito': renderCarrito() // Vista del carrito agregada
+      'carrito': renderCarrito()
     };
 
     return vistas[vistaActual] || renderTienda();
@@ -439,6 +440,15 @@ function Index() {
     <section className="categories-section">
       <h2>Categorías Populares</h2>
       <div className="categories">
+        {/* Botón Todos los Productos */}
+        <div 
+          key="todos" 
+          className="category-card" 
+          onClick={limpiarBusqueda}
+        >
+          <h3>🔄 Todos</h3>
+        </div>
+        
         {CATEGORIAS.map(categoria => (
           <div 
             key={categoria} 
@@ -522,7 +532,7 @@ function Index() {
   const renderSeccionProductos = () => (
     <section className="productos-destacados">
       <h2>
-        {terminoBusqueda ? `Resultados para "${terminoBusqueda}"` : 'Productos destacados'}
+        {terminoBusqueda ? `Resultados para "${terminoBusqueda}"` : 'Todos los productos'}
       </h2>
       <div className="products-grid">
         {cargandoProductos 
